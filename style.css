@@ -126,9 +126,9 @@ html { scroll-behavior: smooth; scroll-padding-top: 60px; }
    =========================== */
 .hero {
   position: relative;
-  padding: 100px 0 80px;
+  padding: 80px 0 60px;
   overflow: hidden;
-  min-height: 100dvh;
+  min-height: auto;
   display: flex;
   align-items: center;
 }
@@ -214,7 +214,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 60px; }
 
 .hero-image {
   position: relative;
-  max-width: 260px;
+  max-width: 160px;
   order: -1;
 }
 
@@ -226,14 +226,21 @@ html { scroll-behavior: smooth; scroll-padding-top: 60px; }
 }
 
 .hero-vertical-text {
-  position: absolute;
-  top: 8px;
-  right: -16px;
-  writing-mode: vertical-rl;
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 0.2em;
-  line-height: 1.6;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hero-vertical-text {
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: -16px;
+    writing-mode: vertical-rl;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.2em;
+    line-height: 1.6;
+  }
 }
 
 /* ===========================
@@ -790,7 +797,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 60px; }
     border: none; padding: 0; flex-direction: row; align-items: center; gap: 24px;
   }
 
-  .hero { padding: 100px 0 60px; }
+  .hero { padding: 100px 0 60px; min-height: 100dvh; }
   .hero-inner { flex-direction: row; justify-content: space-between; align-items: center; }
   .hero-text { flex: 1; max-width: 480px; }
   .hero-text h1 { font-size: 40px; }
