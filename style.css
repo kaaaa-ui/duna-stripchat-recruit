@@ -862,6 +862,117 @@ html { scroll-behavior: smooth; scroll-padding-top: 60px; }
   .sticky-cta { display: none; }
 }
 
+/* ===========================
+   SHINDAN BANNER
+   =========================== */
+.shindan-banner-card {
+  background: rgba(17, 17, 24, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 14px;
+  padding: 30px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.1);
+}
+
+.shindan-banner-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(168, 85, 247, 0.12), transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.08), transparent 50%);
+  pointer-events: none;
+}
+
+.shindan-banner-top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.shindan-banner-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #a855f7, #06b6d4);
+  font-size: 10px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+.shindan-banner-types {
+  font-size: 18px;
+  letter-spacing: 4px;
+}
+
+.shindan-banner-heading {
+  position: relative;
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.shindan-banner-desc {
+  position: relative;
+  font-size: 13px;
+  color: #9ca3af;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.shindan-banner-type-list {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.shindan-banner-type-list span {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  background: rgba(168, 85, 247, 0.06);
+  font-size: 11px;
+  color: #d1d5db;
+  font-weight: 600;
+}
+
+.shindan-banner-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 40px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #a855f7, #06b6d4);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 900;
+  box-shadow:
+    0 0 16px rgba(168, 85, 247, 0.5),
+    0 0 32px rgba(6, 182, 212, 0.3);
+  transition: 0.3s;
+}
+
+.shindan-banner-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 24px rgba(168, 85, 247, 0.6),
+    0 0 48px rgba(6, 182, 212, 0.4);
+}
+
 @media (min-width: 1024px) {
   .container { max-width: 1080px; }
   .header-inner { max-width: 1080px; }
