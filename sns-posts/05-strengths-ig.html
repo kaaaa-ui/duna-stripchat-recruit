@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ヅナ Instagram投稿画像 - 3つの強み</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #000; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+.card {
+  width: 1080px; height: 1080px;
+  background: #0a0a0f;
+  position: relative; overflow: hidden;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #fff;
+}
+.card::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(168,85,247,0.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 70% 80%, rgba(6,182,212,0.1) 0%, transparent 45%);
+}
+.content {
+  position: relative; z-index: 2;
+  height: 100%; padding: 56px;
+  display: flex; flex-direction: column;
+}
+.badge {
+  display: inline-block; align-self: flex-start;
+  background: rgba(168,85,247,0.12);
+  border: 1px solid rgba(168,85,247,0.3);
+  color: #a855f7; font-size: 12px; font-weight: 700;
+  padding: 5px 14px; border-radius: 20px;
+  margin-bottom: 16px; letter-spacing: 1px;
+}
+h1 { font-size: 38px; font-weight: 900; line-height: 1.35; margin-bottom: 8px; }
+h1 .purple { color: #a855f7; }
+.sub-text { font-size: 14px; color: #6b7280; margin-bottom: 32px; }
+/* 強みカード */
+.strengths { display: flex; flex-direction: column; gap: 16px; flex: 1; }
+.strength {
+  display: flex; align-items: flex-start; gap: 20px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(168,85,247,0.1);
+  border-radius: 14px; padding: 28px;
+  flex: 1;
+}
+.strength-icon {
+  width: 56px; height: 56px;
+  background: rgba(168,85,247,0.1);
+  border: 1px solid rgba(168,85,247,0.2);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; flex-shrink: 0;
+}
+.strength-body { flex: 1; }
+.strength-body h3 { font-size: 20px; font-weight: 900; margin-bottom: 4px; }
+.strength-body .lead {
+  font-size: 13px; color: #06b6d4; margin-bottom: 8px;
+}
+.strength-body .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag {
+  font-size: 11px; color: #9ca3af;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 4px 10px; border-radius: 6px;
+}
+/* フッター */
+.card-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(168,85,247,0.08);
+}
+.cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  padding: 12px 28px; border-radius: 8px;
+  font-size: 14px; font-weight: 700;
+  box-shadow: 0 0 20px rgba(168,85,247,0.2);
+}
+.cta .line-badge {
+  background: #06C755; color: #fff;
+  font-size: 10px; font-weight: 900;
+  padding: 3px 7px; border-radius: 4px;
+}
+.logo { font-size: 13px; color: rgba(255,255,255,0.2); font-weight: 700; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="content">
+    <div class="badge">WHY DUNA?</div>
+    <h1>ヅナの<span class="purple">3つの強み</span></h1>
+    <div class="sub-text">他にはないデータドリブンなメンター型サポート</div>
+
+    <div class="strengths">
+      <div class="strength">
+        <div class="strength-icon">📊</div>
+        <div class="strength-body">
+          <h3>データ分析</h3>
+          <div class="lead">データを武器に最短ルートで収益化</div>
+          <div class="tags">
+            <span class="tag">時間帯分析</span>
+            <span class="tag">配信内容の最適化</span>
+            <span class="tag">ターゲット分析</span>
+            <span class="tag">収益シミュレーション</span>
+          </div>
+        </div>
+      </div>
+      <div class="strength">
+        <div class="strength-icon">🛡️</div>
+        <div class="strength-body">
+          <h3>完全サポート</h3>
+          <div class="lead">未経験でも安心のフルサポート</div>
+          <div class="tags">
+            <span class="tag">初期設定</span>
+            <span class="tag">プロフィール設計</span>
+            <span class="tag">配信リアタイ指示</span>
+            <span class="tag">PM戦略</span>
+            <span class="tag">ファンクラブ運営</span>
+          </div>
+        </div>
+      </div>
+      <div class="strength">
+        <div class="strength-icon">🤖</div>
+        <div class="strength-body">
+          <h3>AI配信</h3>
+          <div class="lead">AI配信徹底サポート</div>
+          <div class="tags">
+            <span class="tag">出勤or在宅AI導入</span>
+            <span class="tag">AI配信戦略</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="cta">
+        <span class="line-badge">LINE</span>
+        無料相談はこちら →
+      </div>
+      <div class="logo">ヅナ｜戦略メンター</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

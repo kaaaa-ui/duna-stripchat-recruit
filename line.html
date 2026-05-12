@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LINE友だち追加 | ヅナ</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #0a0a0f;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans JP', sans-serif;
+      padding: 24px;
+      text-align: center;
+    }
+    .logo { font-size: 1.2rem; font-weight: 700; color: #a855f7; margin-bottom: 32px; }
+    .line-icon { width: 80px; height: 80px; margin-bottom: 20px; }
+    h1 { font-size: 1.3rem; margin-bottom: 8px; }
+    .sub { color: #999; font-size: 0.85rem; margin-bottom: 32px; }
+    .btn {
+      display: block;
+      width: 100%;
+      max-width: 320px;
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .btn-line {
+      background: #06C755;
+      color: #fff;
+    }
+    .btn-copy {
+      background: rgba(255,255,255,0.1);
+      color: #ccc;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      cursor: pointer;
+    }
+    .btn-copy.copied { background: rgba(6,199,85,0.2); color: #06C755; border-color: #06C755; }
+    .note {
+      margin-top: 24px;
+      padding: 16px;
+      background: rgba(168,85,247,0.08);
+      border: 1px solid rgba(168,85,247,0.2);
+      border-radius: 10px;
+      max-width: 320px;
+      font-size: 0.8rem;
+      color: #aaa;
+      line-height: 1.6;
+    }
+    .note strong { color: #d4a0ff; }
+  </style>
+</head>
+<body>
+  <div class="logo">ヅナ</div>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE" class="line-icon" />
+  <h1>LINEで友だち追加</h1>
+  <p class="sub">ヅナに無料相談できます</p>
+
+  <!-- 1. LINEアプリを直接開く（URLスキーム） -->
+  <a id="openLine" href="https://line.me/R/ti/p/-_HTVkpnwn" class="btn btn-line">LINEを開く</a>
+
+  <!-- 2. Safariで開くフォールバック -->
+  <a id="openSafari" href="#" class="btn btn-copy" onclick="openInSafari(); return false;">Safariで開く（確実）</a>
+
+  <div class="note">
+    <strong>LINEが開かない場合：</strong><br />
+    「Safariで開く」をタップするか、<br />
+    右上の「⋯」→「Safariで開く」を<br />
+    お試しください。
+  </div>
+
+  <script>
+    var LINE_URL = 'https://line.me/R/ti/p/-_HTVkpnwn';
+    var LINE_SCHEME = 'line://ti/p/-_HTVkpnwn';
+
+    // アプリ内ブラウザ判定
+    function isInAppBrowser() {
+      var ua = navigator.userAgent || '';
+      return /Twitter|FBAN|FBAV|Instagram|Line\/|MicroMessenger/i.test(ua);
+    }
+
+    // Safariで強制的に開く
+    function openInSafari() {
+      // intent URLでシステムブラウザを起動（Android）
+      if (/android/i.test(navigator.userAgent)) {
+        window.location.href = 'intent://' + LINE_URL.replace('https://', '') + '#Intent;scheme=https;end';
+        return;
+      }
+      // iOSの場合 window.open で外部ブラウザ
+      // X内ブラウザではlocation.hrefの方が有効
+      window.location.href = LINE_URL;
+    }
+
+    // ページ読み込み時に自動でLINEアプリを試行
+    (function() {
+      if (isInAppBrowser()) {
+        // アプリ内ブラウザの場合、URLスキームで直接LINEを開く
+        var iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = LINE_SCHEME;
+        document.body.appendChild(iframe);
+
+        // 2秒後にiframeを削除（開けなかった場合のクリーンアップ）
+        setTimeout(function() {
+          document.body.removeChild(iframe);
+        }, 2000);
+      }
+    })();
+  </script>
+</body>
+</html>

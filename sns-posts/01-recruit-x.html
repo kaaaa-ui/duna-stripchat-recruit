@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ヅナ X投稿画像 - キャスト募集</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #000; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+.card {
+  width: 1200px; height: 675px;
+  background: #0a0a0f;
+  position: relative; overflow: hidden;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #fff;
+}
+/* 背景エフェクト */
+.card::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 75% 50%, rgba(168,85,247,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 25% 80%, rgba(6,182,212,0.1) 0%, transparent 45%);
+}
+/* グリッド線 */
+.grid {
+  position: absolute; inset: 0; opacity: 0.04;
+  background-image:
+    linear-gradient(rgba(168,85,247,0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168,85,247,0.5) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+/* コンテンツ */
+.content {
+  position: relative; z-index: 2;
+  display: flex; height: 100%; padding: 48px 56px;
+  align-items: center; gap: 40px;
+}
+.text-area { flex: 1; }
+.badge {
+  display: inline-block;
+  background: rgba(168,85,247,0.15);
+  border: 1px solid rgba(168,85,247,0.3);
+  color: #a855f7;
+  font-size: 13px; font-weight: 700;
+  padding: 6px 16px; border-radius: 20px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+h1 {
+  font-size: 44px; font-weight: 900;
+  line-height: 1.3; margin-bottom: 16px;
+}
+h1 .big {
+  font-size: 64px;
+  background: linear-gradient(135deg, #a855f7, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub {
+  font-size: 16px; color: #9ca3af;
+  line-height: 1.8; margin-bottom: 28px;
+}
+.sub strong { color: #06b6d4; }
+.cta-box {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  padding: 14px 32px; border-radius: 8px;
+  font-size: 16px; font-weight: 700;
+  box-shadow: 0 0 30px rgba(168,85,247,0.3);
+}
+.cta-box .line-badge {
+  background: #06C755; color: #fff;
+  font-size: 11px; font-weight: 900;
+  padding: 3px 8px; border-radius: 4px;
+}
+.avatar-area {
+  width: 320px; height: 100%;
+  display: flex; align-items: flex-end;
+  position: relative;
+}
+.avatar-area img {
+  width: 100%; height: auto;
+  filter: drop-shadow(0 0 40px rgba(168,85,247,0.3));
+}
+/* アバター後ろのグロー */
+.avatar-glow {
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(168,85,247,0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+/* 右下ロゴ */
+.logo {
+  position: absolute; bottom: 24px; right: 32px;
+  font-size: 14px; font-weight: 700;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 2px;
+}
+/* ステータスバー */
+.stats {
+  display: flex; gap: 32px; margin-bottom: 24px;
+}
+.stat-item .num {
+  font-size: 28px; font-weight: 900;
+  background: linear-gradient(135deg, #a855f7, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.stat-item .label {
+  font-size: 11px; color: #6b7280;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="grid"></div>
+  <div class="content">
+    <div class="text-area">
+      <div class="badge">戦略メンター｜ヅナ</div>
+      <h1>ストチャで、<br><span class="big">戦略的に</span><br>稼ぐ。</h1>
+      <div class="stats">
+        <div class="stat-item"><div class="num">50万+</div><div class="label">平均月収</div></div>
+        <div class="stat-item"><div class="num">100人+</div><div class="label">サポート実績</div></div>
+        <div class="stat-item"><div class="num">95%</div><div class="label">継続率</div></div>
+      </div>
+      <div class="cta-box">
+        <span class="line-badge">LINE</span>
+        無料相談はこちら →
+      </div>
+    </div>
+    <div class="avatar-area">
+      <div class="avatar-glow"></div>
+      <img src="../duna-avatar.png" alt="ヅナ">
+    </div>
+  </div>
+  <div class="logo">duna-recruit.vercel.app</div>
+</div>
+</body>
+</html>
